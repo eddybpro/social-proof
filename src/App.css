@@ -151,17 +151,21 @@ main {
   }
 
   header {
-    max-width: 90rem;
+    max-width: 100rem;
     text-align: left;
     display: grid;
-    grid-template-columns: 40rem 42rem;
-    gap: 2rem;
+    grid-template-columns: 50rem 42rem;
+    gap: 4rem;
     align-items: center;
     justify-content: center;
   }
 
   .Head-Title {
     width: 25rem;
+  }
+
+  .Head-Para {
+    width: 38rem;
   }
 
   .Rating > li {
@@ -186,7 +190,7 @@ main {
   }
 
   main {
-    max-width: 90rem;
+    max-width: 100rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
