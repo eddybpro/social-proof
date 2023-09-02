@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+:root {
+  --color-brand-1: hsl(300, 43%, 22%);
+  --color-brand-2: hsl(303, 10%, 53%);
+  --color-brand-3: hsl(333, 80%, 67%);
+
+  --color-site-1: hsl(0, 0%, 100%);
+  --color-site-2: hsl(300, 24%, 96%);
+
+  --font-league-spartan: "League Spartan", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-league-spartan);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+#root {
+  padding: 2rem;
+  background: url("./assets/bg-pattern-top-mobile.svg"),
+    url("./assets/bg-pattern-bottom-mobile.svg");
+  background-position: top left, bottom right;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 16%, 100% 25%;
+  background-color: var(--color-site-1);
+}
+
+header {
+  text-align: center;
+  padding: 5rem 1rem 1rem;
+}
+
+.Head-Title {
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 3.5rem;
+  color: var(--color-brand-1);
+  margin-bottom: 2rem;
+}
+
+.Head-Para {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  font-weight: 500;
+  margin-bottom: 3.5rem;
+  line-height: 1.9rem;
+}
+
+.Rating > li {
+  background-color: var(--color-site-2);
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  color: var(--color-brand-1);
+  font-weight: 500;
+}
+
+.Rating > li::before {
+  content: "";
+  display: block;
+  padding: 0.9rem;
+  margin: 0 auto 1.2rem;
+  width: 11rem;
+  height: 1.5rem;
+  background: url("./assets/icon-star.svg");
+  background-position: center;
+  background-size: 2rem;
+  background-repeat: space;
+}
+
+main {
+  padding: 2rem 1rem;
+}
+
+.Review {
+  background-color: var(--color-brand-1);
+  padding: 3rem 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.Review-User {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.Review-User > img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.Review-User-Name {
+  font-size: 1.8rem;
+  color: var(--color-site-1);
+  margin-bottom: 0.5rem;
+}
+
+.Review-User-Position {
+  color: var(--color-brand-3);
+  font-size: 1.6rem;
+}
+
+.Review-Para {
+  font-size: 1.6rem;
+  color: var(--color-site-2);
+  line-height: 2.25rem;
+}
+
+@media screen and (min-width: 500px) {
+  #root {
+    display: grid;
+    place-items: center;
+  }
+  header,
+  main {
+    max-width: 35rem;
+  }
+}
+
+@media screen and (min-width: 830px) {
+  #root {
+    padding: 2rem;
+    background: url("./assets/bg-pattern-top-desktop.svg"),
+      url("./assets/bg-pattern-bottom-desktop.svg");
+    background-position: top left, bottom right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 50% 50%, 50% 70%;
+    background-color: var(--color-site-1);
+  }
+
+  header {
+    max-width: 90rem;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 40rem 42rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Head-Title {
+    width: 25rem;
+  }
+
+  .Rating > li {
+    position: relative;
+    padding: 1.25rem 2.5rem 1.25rem 14rem;
+    width: 36rem;
+  }
+
+  .Rating > li:nth-of-type(2) {
+    margin-left: 2rem;
+  }
+
+  .Rating > li:last-of-type {
+    margin-left: 4rem;
+  }
+
+  .Rating > li::before {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translate(-8%, -50%);
+  }
+
+  main {
+    max-width: 90rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .Review:nth-of-type(2) {
+    margin-top: 3rem;
+  }
+
+  .Review:last-of-type {
+    margin-top: 6rem;
+  }
+}
